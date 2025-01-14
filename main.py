@@ -45,11 +45,9 @@ HEADERS = {
 ### FUNCTIONS FOR API PULL
 ######################################
 
-#####
+##### Fetch data from the NOKO API for a specific page.
 def fetch_api_data(page: int) -> List[Dict]:
     """
-    Fetch data from the NOKO API for a specific page.
-
     Args:
         page (int): The page number to fetch.
 
@@ -66,10 +64,8 @@ def fetch_api_data(page: int) -> List[Dict]:
         print(f"Failed to fetch data from page {page}. Status code: {response.status_code}")
         return []
 
-####
-def mainAPIpull():
-    #### Main API pull function to fetch all data from the API, process it, and export to CSV.
-    
+#### Main API pull function to fetch all data from the API, process it, and export to CSV.
+def mainAPIpull():  
     all_data = []
     page = 1
 
@@ -115,7 +111,6 @@ def mainAPIpull():
     df.columns = [col.replace('project.name', 'project_name') for col in df.columns]
     df.to_csv('all_entries_deduped.csv', index=False)
     return(df)
-
 ######################################
 ######################################
 
@@ -224,13 +219,12 @@ def check_and_insert_or_update(df):
 
 ######################################
 ######################################
-######################################
-######################################
+##### MAIN LOOP ######################
 ######################################
 ######################################
 
 if __name__ == "__main__":
-    #### Pull api data, transform and put into a dataframe
+    #### Pull api data, transform and put into a dataframe and store it in memory. 
     df = mainAPIpull()
 
     #### CREATE TABLE
