@@ -2,6 +2,8 @@
 *.csv
 *.key
 *.keys
+*.DS_Store
+*.twbx
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
