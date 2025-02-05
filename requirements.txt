@@ -1,6 +1,6 @@
 flask
 psycopg2
-plotly.graph_objs as go
+plotly.graph_objs
 plotly.utils
 json
 numpy
