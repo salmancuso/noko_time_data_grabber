@@ -19,7 +19,8 @@ with open(f"{current_dir}/keys/databaseCreds.key", "r") as rawDatabaseCreds:
         db_database = row[1]
         db_userName = row[2]
         db_password = row[3]
-        db_port = row[4]
+        db_port = int(row[4])
+        db_table = row[5]
 
 HEADERS = {
     'X-NokoToken': apiKey,

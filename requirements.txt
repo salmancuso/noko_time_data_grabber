@@ -1,6 +1,12 @@
-requests
-pandas
+flask
 psycopg2
-regex
-typing
+plotly.graph_objs as go
+plotly.utils
+json
+numpy
+decimal
+csv
 os
+pandas
+config
+regex
